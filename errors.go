@@ -1,4 +1,4 @@
-package eval
+package rego
 
 // Represents an error generated during evaluation of a query
 type EvalErr struct {
