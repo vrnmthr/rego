@@ -11,3 +11,4 @@ go get github.com/vrnmthr/rego
 ```
 
 See full documentation on [GoDoc](https://godoc.org/github.com/vrnmthr/rego)
+

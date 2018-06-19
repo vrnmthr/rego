@@ -197,4 +197,3 @@ func assertWithPath(compiler *ast.Compiler, inputs map[string]interface{}, store
 	}
 	return nil
 }
-
