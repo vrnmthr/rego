@@ -6,16 +6,15 @@ import (
 	"io/ioutil"
 	"encoding/gob"
 	"encoding/json"
-	"reflect"
 	"bytes"
 )
 
-// Parses the file specified by data
+// ParseBytes parses data. fname is used to write error messages.
 func ParseBytes(fname string, data []byte) (*ast.Module, error) {
 	return ast.ParseModule(fname, string(data))
 }
 
-// Parses the file specified by fpath and returns a module
+// ParseFile parses the file specified by fpath and returns a module
 func ParseFile(fpath string) (*ast.Module, error) {
 	file, err := ioutil.ReadFile(fpath)
 	if err != nil {
@@ -24,7 +23,7 @@ func ParseFile(fpath string) (*ast.Module, error) {
 	return ast.ParseModule(fpath, string(file))
 }
 
-// Parses all the files in fpaths and returns a map[string]*ast.DeserializeModuleJson where the filenames are the keys
+// ParseFiles parses all the files in fpaths and returns a map[string]*ast.Module where the filenames are the keys
 func ParseFiles(fpaths []string) (map[string]*ast.Module, error) {
 	errs := new(policy.Errors)
 	modules := make(map[string]*ast.Module)
@@ -37,13 +36,14 @@ func ParseFiles(fpaths []string) (map[string]*ast.Module, error) {
 }
 
 // SerializeModuleJson converts into a JSON document. The document should always be pre-compiled and checked for correctness
-// as the JSON document does not store the locations of any of the elements in the AST. This will make error messages
-// during compilation very difficult.
+// as the JSON document does not store the locations of any of the elements in the AST. This means that error messages
+// during compilation post deserialization will be terrible.
+// TODO: check that errors can still be produced
 func SerializeModuleJson(module *ast.Module) ([]byte, error) {
 	return json.Marshal(*module)
 }
 
-// Reads a module from a Json byte array. The AST produced has no location fields.
+// DeserializeModuleJson reads a module from a Json byte array. The AST produced has no location fields.
 func DeserializeModuleJson(data []byte) (*ast.Module, error) {
 	var module = &ast.Module{}
 	err := json.Unmarshal(data, module)
@@ -56,6 +56,7 @@ func DeserializeModuleJson(data []byte) (*ast.Module, error) {
 
 // SerializeModuleGob uses Gob to convert into a byte array. The disadvantage of this method is that it is less space
 // efficient as it stores all the location fields
+// TODO: test this function
 func SerializeModuleGob(module *ast.Module) ([]byte, error) {
 	buf := new(bytes.Buffer)
 	removeModuleFromRules(module)
@@ -65,6 +66,7 @@ func SerializeModuleGob(module *ast.Module) ([]byte, error) {
 }
 
 // DeserializeModuleGob uses Gob to deserialize.
+// TODO: test this function
 func DeserializeModuleGob(data []byte) (*ast.Module, error) {
 	buf := bytes.NewBuffer(data)
 	dec := gob.NewDecoder(buf)
@@ -88,43 +90,44 @@ func addModuleToRules(module *ast.Module) {
 	}
 }
 
-// reflect based conversion of all fields to nil
-// Used for testing
-func convertLocationToNil(value reflect.Value) {
-	switch value.Kind(){
-	case reflect.Ptr:
-		convertLocationToNil(value.Elem())
-	case reflect.Array, reflect.Slice:
-		for i := 0; i < value.Len(); i++ {
-			convertLocationToNil(value.Index(i))
-		}
-	case reflect.Map:
-		for _, key := range value.MapKeys() {
-			convertLocationToNil(value.MapIndex(key))
-		}
-	case reflect.Struct:
-		loc := value.FieldByName("Location")
-		if loc.IsValid() {
-			if loc.CanSet() {
-				loc.Set(reflect.Zero(loc.Type()))
-			}
-		}
-		for i := 0; i < value.NumField(); i++ {
-			convertLocationToNil(value.Field(i))
-		}
-	}
-}
+
+//// reflect based conversion of all fields to nil
+//// Used for testing
+//func convertLocationToNil(value reflect.Value) {
+//	switch value.Kind(){
+//	case reflect.Ptr:
+//		convertLocationToNil(value.Elem())
+//	case reflect.Array, reflect.Slice:
+//		for i := 0; i < value.Len(); i++ {
+//			convertLocationToNil(value.Index(i))
+//		}
+//	case reflect.Map:
+//		for _, key := range value.MapKeys() {
+//			convertLocationToNil(value.MapIndex(key))
+//		}
+//	case reflect.Struct:
+//		loc := value.FieldByName("Location")
+//		if loc.IsValid() {
+//			if loc.CanSet() {
+//				loc.Set(reflect.Zero(loc.Type()))
+//			}
+//		}
+//		for i := 0; i < value.NumField(); i++ {
+//			convertLocationToNil(value.Field(i))
+//		}
+//	}
+//}
 
 // removeLocations sets all the location tags of the struct to nil
-func removeLocation(mod *ast.Module) {
-	for _, rule := range mod.Rules {
-		rule.Module = nil
-	}
-	convertLocationToNil(reflect.ValueOf(mod))
-	for _, rule := range mod.Rules {
-		rule.Module = mod
-	}
-}
+//func removeLocation(mod *ast.Module) {
+//	for _, rule := range mod.Rules {
+//		rule.Module = nil
+//	}
+//	convertLocationToNil(reflect.ValueOf(mod))
+//	for _, rule := range mod.Rules {
+//		rule.Module = mod
+//	}
+//}
 //
 ////func removeLocationFromTerm(term *ast.Term) {
 ////	term.Location = nil

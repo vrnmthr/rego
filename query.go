@@ -57,11 +57,13 @@ func QueryRule(cmp *ast.Compiler, pkg, rule string, inputs map[string]interface{
 	return rs[0].Expressions[0].Value, err
 }
 
+// IsUndefined returns true if the given error is an UndefinedErr
 func IsUndefined(err error) bool {
 	_, ok := err.(*UndefinedErr)
 	return ok
 }
 
+// IsEvalErr returns true if the given error is an EvalErr
 func IsEvalErr(err error) bool {
 	_, ok := err.(*EvalErr)
 	return ok

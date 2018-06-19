@@ -95,9 +95,9 @@ type TestCase struct {
 }
 
 // RunTestCase runs the given test with the given inputs and data document. It annotates the test with note.
-// Although test.Expected is an interface{}, Rego queries can only return JSON values, so format your interface
-// accordingly (i.e should be map[string]interface{}, []interface{}, etc.). An incorrect expected value will
-// simply return false.
+// To check for equality, under the hood test.Expected is converted to a JSON object and the result of the rego
+// query is also converted into a JSON object. These two objects are then tested for deep equality. If the
+// expected value cannot be converted to JSON, this function panics.
 func (test *TestCase) Run(t *testing.T, inputs, data map[string]interface{}, note string) {
 	t.Run(note, func(t2 *testing.T) {
 		err := runTestCase(inputs, data, test)
@@ -127,7 +127,8 @@ func runTestCase(inputs, data map[string]interface{}, test *TestCase) (error) {
 	return assertWithPath(compiler, inputs, store, test.Rule, path, test.Expected)
 }
 
-// TestCase the given file. Rule must be specified
+// RunTestFile ensures that the outcome of rule in file with inputs and data as provided is equal to expected. The
+// comparison is done in the same way as TestCase.Run().
 func RunTestFile(t *testing.T, inputs, data map[string]interface{}, file, rule, note string, expected interface{}) {
 	module, err := ParseBytes("test", []byte(file))
 	if err != nil {
