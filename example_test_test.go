@@ -14,7 +14,7 @@ func ExampleRun() {
 	}
 
 	test := TestCase{
-		Rule: "hippo",
+		Target: "hippo",
 		Rules: []string{
 			`hippo = {"name":"jim", "age": 123, "friends":["tom", "ben"]} {true}`,
 		},
@@ -22,5 +22,5 @@ func ExampleRun() {
 	}
 
 	// would put a testing.t here
-	test.Run(nil, nil, nil, "example")
+	test.Run(nil, nil, nil)
 }

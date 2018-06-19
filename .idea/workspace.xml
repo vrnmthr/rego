@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="620e25bb-a07b-48f9-9851-b6c6170bf18b" name="Default" comment="Init repo">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/rego.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    <list default="true" id="620e25bb-a07b-48f9-9851-b6c6170bf18b" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/errors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_test_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/example_test_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parse.go" beforeDir="false" afterPath="$PROJECT_DIR$/parse.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test_test.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,104 +17,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/rego$go_test_rego.out" NAME="go test rego Coverage Results" MODIFIED="1529368345310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/rego$go_test_rego.out" NAME="go test rego Coverage Results" MODIFIED="1529429966403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="GoCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="query.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/query.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="10" selection-start-column="10" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="query_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/query_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="119" column="1" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parse.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parse.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-              <folding>
-                <element signature="e#4685#5888#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="parse_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parse_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="97" column="1" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="example_pce_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example_pce_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-              <folding>
-                <element signature="n#!!block;n#Example#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="example_test_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example_test_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="e#92#97#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="109" column="78" lean-forward="true" selection-start-line="109" selection-start-column="78" selection-end-line="109" selection-end-column="78" />
-              <folding>
-                <element signature="n#!!block;n#runTestCase#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_test.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="115" column="5" lean-forward="true" selection-start-line="101" selection-start-column="4" selection-end-line="115" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -134,18 +41,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/errors.go" />
         <option value="$PROJECT_DIR$/query.go" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/parse.go" />
-        <option value="$PROJECT_DIR$/test.go" />
         <option value="$PROJECT_DIR$/query_test.go" />
         <option value="$PROJECT_DIR$/parse_test.go" />
         <option value="$PROJECT_DIR$/pce-example.go" />
         <option value="$PROJECT_DIR$/pce-example_test.go" />
         <option value="$PROJECT_DIR$/test-example_test.go" />
-        <option value="$PROJECT_DIR$/example_test_test.go" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/test.go" />
+        <option value="$PROJECT_DIR$/example_test_test.go" />
+        <option value="$PROJECT_DIR$/test_test.go" />
+        <option value="$PROJECT_DIR$/errors.go" />
+        <option value="$PROJECT_DIR$/parse.go" />
       </list>
     </option>
   </component>
@@ -160,8 +68,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="22" />
-    <option name="width" value="720" />
-    <option name="height" value="798" />
+    <option name="width" value="1280" />
+    <option name="height" value="1338" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -218,9 +126,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="go_test_rego - 2018.06.18 at 16h 55m 32s.xml">
-      <configuration name="go test rego" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="go_test_rego - 2018.06.18 at 16h 56m 35s.xml">
       <configuration name="go test rego" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -245,19 +150,25 @@
     <history-entry file="go_test_rego - 2018.06.18 at 18h 05m 38s.xml">
       <configuration name="go test rego" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="go_test_rego - 2018.06.19 at 10h 37m 32s.xml">
+      <configuration name="go test rego" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="go_test_rego - 2018.06.19 at 10h 39m 27s.xml">
+      <configuration name="go test rego" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="798" extended-state="6" />
+    <frame x="0" y="22" width="2560" height="1338" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32952926" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.24177396" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32952926" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info anchor="right" id="Coverage" side_tool="true" visible="true" weight="0.13423352" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.18614021" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14058776" />
       <window_info anchor="bottom" id="Statistic" order="7" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -279,10 +190,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Init repo" />
     <MESSAGE value="Modified to make GoDoc compatible" />
     <MESSAGE value="Updated README" />
     <MESSAGE value="Added example file" />
+    <MESSAGE value="Init repo" />
     <MESSAGE value="Added GoDoc examples" />
     <option name="LAST_COMMIT_MESSAGE" value="Added GoDoc examples" />
   </component>
@@ -341,6 +252,7 @@
         <state>
           <caret column="12" selection-start-column="12" selection-end-column="12" />
           <folding>
+            <element signature="n#!!block;n#Run#0" expanded="true" />
             <element signature="n#!!block;n#runTestCase#0" expanded="true" />
           </folding>
         </state>
@@ -363,17 +275,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/errors.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <element signature="e#89#115#0" />
-            <element signature="e#327#353#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/compile.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -392,23 +293,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="838" selection-start-line="838" selection-end-line="838" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parse_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="97" column="1" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parse.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#4685#5888#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -436,9 +320,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example_test_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/example_pce_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
+        <state relative-caret-position="63">
           <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding>
             <element signature="n#!!block;n#Example#0" expanded="true" />
@@ -446,40 +340,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.go">
+    <entry file="file://$PROJECT_DIR$/parse_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="109" column="78" lean-forward="true" selection-start-line="109" selection-start-column="78" selection-end-line="109" selection-end-column="78" />
-          <folding>
-            <element signature="n#!!block;n#runTestCase#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="115" column="5" lean-forward="true" selection-start-line="101" selection-start-column="4" selection-end-line="115" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example_test_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#92#97#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="97" column="1" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parse.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#533#555#0" />
+            <element signature="e#885#965#0" />
+            <element signature="e#1004#1128#0" />
+            <element signature="e#1702#1724#0" />
+            <element signature="e#1774#1891#0" />
+            <element signature="e#2173#2221#0" />
+            <element signature="e#2600#2624#0" />
+            <element signature="e#2749#2776#0" />
+            <element signature="e#2781#2831#0" />
+            <element signature="e#3496#3562#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1934">
+          <caret line="160" column="28" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+          <folding>
+            <element signature="e#14#42#0" expanded="true" />
+            <element signature="n#!!block;n#TestExpectedUndefined#0" expanded="true" />
+            <element signature="n#!!block;n#TestUnexpectedUndefined#0" expanded="true" />
+            <element signature="n#!!block;n#TestExpectedError#0" expanded="true" />
+            <element signature="n#!!block;n#TestUnexpectedError#0" expanded="true" />
+            <element signature="n#!!block;n#TestDefaultRuleWorks#0" expanded="true" />
+            <element signature="n#!!block;n#TestStringIntDifference#0" expanded="true" />
+            <element signature="n#!!block;n#TestComplexEquality#0" expanded="true" />
+            <element signature="n#!!block;n#TestComplexInequality#0" expanded="true" />
+            <element signature="n#!!block;n#TestInputs#0" expanded="true" />
+            <element signature="n#!!block;n#TestData#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/errors.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+          <folding>
+            <element signature="e#94#120#0" />
+            <element signature="e#402#428#0" />
+            <element signature="e#813#923#0" />
+            <element signature="e#844#883#0" />
+            <element signature="e#886#916#0" />
+            <element signature="e#1009#1044#0" />
+            <element signature="e#1176#1193#0" />
+            <element signature="e#1250#1290#0" />
+            <element signature="e#1358#1371#0" />
+            <element signature="e#1418#1457#0" />
+            <element signature="e#1459#1521#0" />
+            <element signature="e#1592#1605#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="101" column="23" lean-forward="true" selection-start-line="101" selection-start-column="23" selection-end-line="101" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!block;n#Run#0" expanded="true" />
+            <element signature="n#!!block;n#runTestCase#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

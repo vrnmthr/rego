@@ -2,7 +2,6 @@ package rego
 
 import (
 	"github.com/open-policy-agent/opa/ast"
-	"gitlab.corp.cloudsimple.com/cloudsimple/csos/opa-policy"
 	"io/ioutil"
 	"encoding/gob"
 	"encoding/json"
@@ -25,7 +24,7 @@ func ParseFile(fpath string) (*ast.Module, error) {
 
 // ParseFiles parses all the files in fpaths and returns a map[string]*ast.Module where the filenames are the keys
 func ParseFiles(fpaths []string) (map[string]*ast.Module, error) {
-	errs := new(policy.Errors)
+	errs := new(Errors)
 	modules := make(map[string]*ast.Module)
 	for _, fpath := range fpaths {
 		module, err := ParseFile(fpath)

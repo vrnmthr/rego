@@ -86,11 +86,12 @@ func areEqualJson(arg1, arg2 interface{}) (bool, error) {
 	return reflect.DeepEqual(o1, o2), nil
 }
 
-// TestCase represents a single test. Rule is the rule to be queried for. It defaults to "t".
+// TestCase represents a single test. Target is the rule to be queried for. It defaults to "t".
 // Rules should be Rego rules.
 type TestCase struct {
-	Rule string
-	Rules []string
+	Note     string
+	Target   string
+	Rules    []string
 	Expected interface{}
 }
 
@@ -98,8 +99,8 @@ type TestCase struct {
 // To check for equality, under the hood test.Expected is converted to a JSON object and the result of the rego
 // query is also converted into a JSON object. These two objects are then tested for deep equality. If the
 // expected value cannot be converted to JSON, this function panics.
-func (test *TestCase) Run(t *testing.T, inputs, data map[string]interface{}, note string) {
-	t.Run(note, func(t2 *testing.T) {
+func (test *TestCase) Run(t *testing.T, inputs, data map[string]interface{}) {
+	t.Run(test.Note, func(t2 *testing.T) {
 		err := runTestCase(inputs, data, test)
 		if err != nil {
 			t2.Fatalf(err.Error())
@@ -114,8 +115,8 @@ func runTestCase(inputs, data map[string]interface{}, test *TestCase) (error) {
 		return err
 	}
 
-	if len(test.Rule) == 0 {
-		test.Rule = "t"
+	if len(test.Target) == 0 {
+		test.Target = "t"
 	}
 
 	var store storage.Store = nil
@@ -124,7 +125,7 @@ func runTestCase(inputs, data map[string]interface{}, test *TestCase) (error) {
 	}
 
 	path := "data." + pkg
-	return assertWithPath(compiler, inputs, store, test.Rule, path, test.Expected)
+	return assertWithPath(compiler, inputs, store, test.Target, path, test.Expected)
 }
 
 // RunTestFile ensures that the outcome of rule in file with inputs and data as provided is equal to expected. The

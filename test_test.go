@@ -7,11 +7,11 @@ import (
 
 func TestExpectedUndefined(t *testing.T) {
 	test := TestCase{
-		Rule: "garbage",
-		Rules: nil,
+		Target:   "garbage",
+		Rules:    nil,
 		Expected: UNDEF,
 	}
-	test.Run(t, nil, nil,"bad rule is undefined")
+	test.Run(t, nil, nil)
 }
 
 func TestUnexpectedUndefined(t *testing.T)  {
@@ -52,7 +52,7 @@ func TestDefaultRuleWorks(t *testing.T) {
 		Rules: []string{"t = 10 {true}", "default b = 8"},
 		Expected: 10,
 	}
-	test.Run(t, nil, nil,"default rule is t")
+	test.Run(t, nil, nil)
 }
 
 func TestStringIntDifference(t *testing.T) {
@@ -87,8 +87,8 @@ func TestComplexEquality(t *testing.T) {
 	}
 
 	test := TestCase{
-		Rule: "hippo",
-		Rules: []string{`hippo = {"name":"jim", "age": 123, "friends":["tom", "ben"]} {true}`},
+		Target:   "hippo",
+		Rules:    []string{`hippo = {"name":"jim", "age": 123, "friends":["tom", "ben"]} {true}`},
 		Expected: hippo,
 	}
 
@@ -110,8 +110,8 @@ func TestComplexInequality(t *testing.T) {
 	}
 
 	test := TestCase{
-		Rule: "hippo",
-		Rules: []string{`hippo = {"name":"jim", "age": 123, "friends":["tom", "ben"]} {true}`},
+		Target:   "hippo",
+		Rules:    []string{`hippo = {"name":"jim", "age": 123, "friends":["tom", "ben"]} {true}`},
 		Expected: hippo,
 	}
 
@@ -130,7 +130,7 @@ func TestInputs(t *testing.T)  {
 		Rules: []string{"t = x {x := input.arg + input.arg2}"},
 		Expected: 22,
 	}
-	test.Run(t, inputs, nil, "inputs")
+	test.Run(t, inputs, nil)
 }
 
 func TestData(t *testing.T) {
@@ -142,7 +142,7 @@ func TestData(t *testing.T) {
 		Rules: []string{"t = x {x := data.arg + data.arg2}"},
 		Expected: 22,
 	}
-	test.Run(t, nil, data, "data")
+	test.Run(t, nil, data)
 }
 
 func TestInputsAndData(t *testing.T) {
@@ -158,5 +158,5 @@ func TestInputsAndData(t *testing.T) {
 		Rules: []string{"t = x {x := input.arg + input.arg2 + data.arg3 + data.arg4}"},
 		Expected: 25,
 	}
-	test.Run(t, inputs, data, "inputs + data")
+	test.Run(t, inputs, data)
 }
