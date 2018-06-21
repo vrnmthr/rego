@@ -1,15 +1,15 @@
 package rego
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
 	"github.com/open-policy-agent/opa/ast"
 	"github.com/open-policy-agent/opa/storage"
 	"github.com/open-policy-agent/opa/storage/inmem"
+	"reflect"
 	"strings"
 	"testing"
-	"bytes"
-	"reflect"
-	"encoding/json"
 )
 
 const (
@@ -108,11 +108,14 @@ func (test *TestCase) Run(t *testing.T, inputs, data map[string]interface{}) {
 	})
 }
 
-func runTestCase(inputs, data map[string]interface{}, test *TestCase) (error) {
+func runTestCase(inputs, data map[string]interface{}, test *TestCase) error {
 	pkg := "testing"
 	compiler, err := compileRules(pkg, test.Rules)
-	if err != nil {
-		return err
+	if exp, ok := test.Expected.(error); err != nil && ok {
+		if !strings.Contains(err.Error(), exp.Error()) {
+			return fmt.Errorf("expected error %v but got: %v", exp.Error(), err.Error())
+		}
+		return nil
 	}
 
 	if len(test.Target) == 0 {
@@ -150,7 +153,7 @@ func RunTestFile(t *testing.T, inputs, data map[string]interface{}, file, rule, 
 }
 
 func assertWithPath(compiler *ast.Compiler, inputs map[string]interface{}, store storage.Store,
-	rule, path string, expected interface{}) (error) {
+	rule, path string, expected interface{}) error {
 
 	q := fmt.Sprintf("%v.%v", path, rule)
 
